@@ -41,7 +41,7 @@ print("*" * 40)
 # Bucle infinito
 while True:
     # Entrada del usuario
-    usuario = input("\nElige (Piedra, Papel, Tijera) o escribe 'Salir': ").lower()
+    usuario = input("Elige (Piedra, Papel, Tijera) o escribe 'Salir': ").lower()
 
     # Salir del juego
     if usuario == "salir":
