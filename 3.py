@@ -1,123 +1,111 @@
-# ---------------- FUNCIONES BÁSICAS ----------------
 
-def sumar():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        print("Resultado:", a + b)
-    except:
-        print("Error: Entrada no válida")
+import math
 
+#operacion de la suma
+def suma(numero_uno, numero_dos):
+   suma = numero_uno + numero_dos
 
-def restar():
-    try:
-        a = float(input("Ingrese el minuendo: "))
-        b = float(input("Ingrese el sustraendo: "))
-        print("Resultado:", a - b)
-    except:
-        print("Error: Entrada no válida")
+   return suma
 
 
-def multiplicar():
-    try:
-        a = float(input("Ingrese el primer factor: "))
-        b = float(input("Ingrese el segundo factor: "))
-        print("Resultado:", a * b)
-    except:
-        print("Error: Entrada no válida")
 
 
-def dividir():
-    try:
-        a = float(input("Ingrese el dividendo: "))
-        b = float(input("Ingrese el divisor: "))
-        if b == 0:
-            print("Error: No se puede dividir entre cero")
-        else:
-            print("Resultado:", a / b)
-    except:
-        print("Error: Entrada no válida")
+
+#operacion de la resta
+def resta(numero_uno, numero_dos):
+   
+
+    resta = numero_uno - numero_dos
+    return resta
 
 
-# ---------------- FACTORIAL ----------------
-
-def factorialCalculo(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorialCalculo(n - 1)
 
 
-def factorial():
-    try:
-        n = int(input("Ingrese un número entero positivo: "))
-        if n < 0:
-            print("Error: El número debe ser positivo")
-        else:
-            print("Resultado:", factorialCalculo(n))
-    except:
-        print("Error: Entrada no válida")
+#operacion de la multiplicacion
+def multiplicacion(numero_uno, numero_dos):
+    
+   multiplicacion= numero_uno * numero_dos
+
+   return multiplicacion
 
 
-# ---------------- POTENCIA ----------------
-
-def potenciaCalculo(base, exp):
-    if exp == 0:
-        return 1
-    else:
-        return base * potenciaCalculo(base, exp - 1)
 
 
-def potencia():
-    try:
-        base = float(input("Ingrese la base: "))
-        exp = int(input("Ingrese el exponente (entero): "))
-        print("Resultado:", potenciaCalculo(base, exp))
-    except:
-        print("Error: Entrada no válida")
 
 
-# ---------------- MENÚ PRINCIPAL ----------------
+#operacion de la divivcion
+def division(numero_uno, numero_dos):  
+     
+   division = numero_uno / numero_dos
+   return division
 
-def calculadora():
-    opcion = 0
 
-    while opcion != 7:
-        print("""
-╔══════════════════════════════╗
-║       CALCULADORA 🧮         ║
-╠══════════════════════════════╣
-║ 1. Sumar                    ║
-║ 2. Restar                   ║
-║ 3. Multiplicar              ║
-║ 4. Dividir                  ║
-║ 5. Factorial                ║
-║ 6. Potencia                 ║
-║ 7. Salir                    ║
-╚══════════════════════════════╝
-""")
 
-        try:
-            opcion = int(input("Seleccione una opción: "))
 
-            if opcion == 1:
-                sumar()
-            elif opcion == 2:
-                restar()
-            elif opcion == 3:
-                multiplicar()
-            elif opcion == 4:
-                dividir()
-            elif opcion == 5:
-                factorial()
-            elif opcion == 6:
-                potencia()
-            elif opcion == 7:
-                print("Saliendo del programa...")
-            else:
-                print("Opción inválida")
-        except:
-            print("Error: Debe ingresar un número")
+#operacion factorial
 
-# ---------------- EJECUCIÓN ----------------
-calculadora()
+def factorial(n):
+   
+   factorial = math.factorial(6)
+   return factorial
+
+
+#operacion potencia
+def potencia(numero_uno, numero_dos):
+   potencia = numero_uno** numero_dos
+
+
+print("*" * 40)
+print(" BIENVENIDO A LA CALCULADORA ".center(40, "*"))
+print("*" * 40)
+
+
+
+print ("Hola elige una opcion del menu")
+
+#Operaciones que va a realizar la calculadora de acuerdo a la opcion dada por el usuario
+
+try:
+   opcion = int(input("selecciona la operacion que quieres realizar: "))
+
+   if opcion ==1: 
+      print("vas a sumar")  
+      suma_uno= int(input("ingresa el primer numero: "))
+      suma_dos= int(input("ingresa el segundo numero: "))
+      suma = suma_uno + suma_dos
+      print("El resultado de la suma es: ", suma)
+   elif opcion == 2:
+      print("vas a restar")
+      resta_uno= int(input("ingresa el primer numero: "))
+      resta_dos= int(input("ingresa el segundo numero: "))
+      resta = resta_uno - resta_dos
+      print("El resultado de la resta es: ", resta)
+   elif opcion == 3:
+      print("vas a multiplicar")
+      multi_uno= int(input("ingresa el primer numero: "))
+      multi_dos= int(input("ingresa el segundo numero: "))
+      multi = multi_uno * multi_dos
+      print("El resultado de la nultiplicacion es: ", multiplicacion)
+   elif opcion == 4:
+      print("vas a dividir")                 
+      division_uno= int(input("ingresa el primer numero: "))
+      division_dos= int(input("ingresa el segundo numero: "))
+      division = division_uno / division_dos
+      print("El resultado de la division es: ", division)
+   elif opcion == 5:
+      print("vas a calcular el factorial")
+      factorial_n= int(input("ingresa el numero para calcular su factorial: "))
+      factorial = math.factorial(factorial_n)
+      print("El resultado del factorial es: ", factorial)
+   elif opcion == 6:
+      print("vas a calcular la potencia")
+      potencia_uno= int(input("ingresa el primer numero: "))
+      potencia_dos= int(input("ingresa el segundo numero: "))
+      potencia = potencia_uno ** potencia_dos
+      print("El resultado de la potencia es: ", potencia)
+   elif opcion == 7:
+      print("ejecutando la salida el programa......")
+   else:
+      print("opcion invalida, elige bine la opcion del menu")
+except:
+   print("Error: numero no valido")
